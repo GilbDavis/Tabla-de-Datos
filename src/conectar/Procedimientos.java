@@ -22,4 +22,11 @@ public class Procedimientos {
         eliminar.setInt (1, id);
         eliminar.execute();
     }
+    
+    //Metodo para buscar Registro de la Base de Datos
+    public static void BuscarDatos(int id) throws SQLException{
+        CallableStatement buscar = Conexion.getConexion().prepareCall("{call BuscarDatos(?)}");
+        buscar.setInt (1, id);
+        buscar.execute();
+    }
 }
