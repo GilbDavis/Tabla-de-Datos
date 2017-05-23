@@ -8,6 +8,8 @@ package Clases;
 import static conectar.Conexion.password;
 import static conectar.Conexion.usuario;
 import java.awt.Panel;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -48,6 +50,12 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Password");
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Conectar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -111,12 +119,21 @@ public class Interfaz extends javax.swing.JFrame {
         if(conectar.Conexion.getStatus()){
             Menu objeto = new Menu();
             objeto.setVisible(true);
+            jTextField1.setText("");
+            jPasswordField1.setText("");
+            dispose();   
         }else{
             JOptionPane.showMessageDialog(null, "USUARIO Y PASSWORD INCORRECTOS", "Error de conexion", JOptionPane.ERROR_MESSAGE);
             jTextField1.setText("");
             jPasswordField1.setText("");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+        Menu ventana = new Menu();
+        
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
