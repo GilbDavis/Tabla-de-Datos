@@ -29,4 +29,12 @@ public class Procedimientos {
         buscar.setInt (1, id);
         buscar.execute();
     }
+    /*Metodo para insertar datos a la tabla relacionada **Necesita optimizarse el codigo** */
+    public static void EntradaSueldo(int id, float Sueldo_Mensual, float Sueldo_Anual) throws SQLException{
+        CallableStatement sueldo = Conexion.getConexion().prepareCall("{call EntradaSueldo(?,?,?)}");
+        sueldo.setInt(1, id);
+        sueldo.setFloat(2, Sueldo_Mensual);
+        sueldo.setFloat(3, Sueldo_Anual);
+        sueldo.execute();
+    }
 }

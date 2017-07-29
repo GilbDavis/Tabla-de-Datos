@@ -22,7 +22,7 @@ public class Conexion {
         try{
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         }catch (ClassNotFoundException e){
-            JOptionPane.showMessageDialog(null, "Nose pudo establecer la conexion... revisar driver "+
+            JOptionPane.showMessageDialog(null, "Nose pudo establecer la conexion... revisar Driver"+
                     e.getMessage() + " Error de conexion" + JOptionPane.ERROR_MESSAGE);
         }
         try{
